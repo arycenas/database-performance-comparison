@@ -65,4 +65,50 @@ public class DataAggregateService {
 
         return result;
     }
+
+    public Map<String, Object> minAverageAndMeasureTime() {
+        Map<String, Object> result = new HashMap<>();
+
+        // PostgreSQL Average Aggregation
+        Instant postgresStart = Instant.now();
+        Double postgresAverage = postgresDataRepository.minTotalNetAmount();
+        Instant postgresEnd = Instant.now();
+        Duration postgresDuration = Duration.between(postgresStart, postgresEnd);
+
+        // MongoDB Average Aggregation
+        Instant mongoStart = Instant.now();
+        Double mongoAverage = mongoDataRepository.minTotalNetAmount();
+        Instant mongoEnd = Instant.now();
+        Duration mongoDuration = Duration.between(mongoStart, mongoEnd);
+
+        result.put("PostgreSQL Aggregation Time (ms)", postgresDuration.toMillis());
+        result.put("MongoDB Aggregation Time (ms)", mongoDuration.toMillis());
+        result.put("PostgreSQL Total Net Amount Min", postgresAverage);
+        result.put("MongoDB Total Net Amount Min", mongoAverage);
+
+        return result;
+    }
+
+    public Map<String, Object> maxAverageAndMeasureTime() {
+        Map<String, Object> result = new HashMap<>();
+
+        // PostgreSQL Average Aggregation
+        Instant postgresStart = Instant.now();
+        Double postgresAverage = postgresDataRepository.maxTotalNetAmount();
+        Instant postgresEnd = Instant.now();
+        Duration postgresDuration = Duration.between(postgresStart, postgresEnd);
+
+        // MongoDB Average Aggregation
+        Instant mongoStart = Instant.now();
+        Double mongoAverage = mongoDataRepository.maxTotalNetAmount();
+        Instant mongoEnd = Instant.now();
+        Duration mongoDuration = Duration.between(mongoStart, mongoEnd);
+
+        result.put("PostgreSQL Aggregation Time (ms)", postgresDuration.toMillis());
+        result.put("MongoDB Aggregation Time (ms)", mongoDuration.toMillis());
+        result.put("PostgreSQL Total Net Amount Max", postgresAverage);
+        result.put("MongoDB Total Net Amount Max", mongoAverage);
+
+        return result;
+    }
 }

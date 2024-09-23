@@ -13,9 +13,15 @@ public interface PostgresDataRepository extends JpaRepository<PostgresData, Long
     @Override
     void deleteById(Long postgresId);
 
-    @Query("SELECT SUM(CAST(p.TOTAL_NET_AMOUNT AS double)) FROM PostgresData p")
+    @Query("SELECT SUM(p.TOTAL_NET_AMOUNT) FROM PostgresData p")
     Double sumTotalNetAmount();
 
-    @Query("SELECT AVG(CAST(p.TOTAL_NET_AMOUNT AS double)) FROM PostgresData p")
+    @Query("SELECT AVG(p.TOTAL_NET_AMOUNT) FROM PostgresData p")
     Double averageTotalNetAmount();
+
+    @Query("SELECT MIN(p.TOTAL_NET_AMOUNT) FROM PostgresData p")
+    Double minTotalNetAmount();
+
+    @Query("SELECT MAX(p.TOTAL_NET_AMOUNT) FROM PostgresData p")
+    Double maxTotalNetAmount();
 }

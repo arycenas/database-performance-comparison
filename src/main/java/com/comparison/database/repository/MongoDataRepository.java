@@ -25,4 +25,10 @@ public interface MongoDataRepository extends MongoRepository<MongoData, ObjectId
 
     @Aggregation("{ $group: { _id: null, average: { $avg: { $toDouble: '$TOTAL_NET_AMOUNT' } } } }")
     Double averageTotalNetAmount();
+
+    @Aggregation("{ $group: { _id: null, min: { $min: { $toDouble: '$TOTAL_NET_AMOUNT' } } } }")
+    Double minTotalNetAmount();
+
+    @Aggregation("{ $group: { _id: null, max: { $max: { $toDouble: '$TOTAL_NET_AMOUNT' } } } }")
+    Double maxTotalNetAmount();
 }

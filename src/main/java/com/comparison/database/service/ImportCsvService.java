@@ -93,8 +93,8 @@ public class ImportCsvService {
                             mongoData.setCOMPANY_CODE(fieldValue);
                         }
                         case "RECEIVE_NUMBER" -> {
-                            postgresData.setRECEIVE_NUMBER(fieldValue);
-                            mongoData.setRECEIVE_NUMBER(fieldValue);
+                            postgresData.setRECEIVE_NUMBER(Long.valueOf(fieldValue));
+                            mongoData.setRECEIVE_NUMBER(Long.valueOf(fieldValue));
                         }
                         case "RECEIVE_DATE" -> {
                             postgresData.setRECEIVE_DATE(fieldValue);
@@ -105,36 +105,36 @@ public class ImportCsvService {
                             mongoData.setORDER_LAYOUT_TYPE(fieldValue);
                         }
                         case "TOTAL_GROSS_AMOUNT" -> {
-                            postgresData.setTOTAL_GROSS_AMOUNT(fieldValue);
-                            mongoData.setTOTAL_GROSS_AMOUNT(fieldValue);
+                            postgresData.setTOTAL_GROSS_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_GROSS_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "TOTAL_DISCOUNT_AMOUNT" -> {
-                            postgresData.setTOTAL_DISCOUNT_AMOUNT(fieldValue);
-                            mongoData.setTOTAL_DISCOUNT_AMOUNT(fieldValue);
+                            postgresData.setTOTAL_DISCOUNT_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_DISCOUNT_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "TOTAL_NET_AMOUNT" -> {
-                            postgresData.setTOTAL_NET_AMOUNT(fieldValue);
-                            mongoData.setTOTAL_NET_AMOUNT(fieldValue);
+                            postgresData.setTOTAL_NET_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_NET_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "TOTAL_TAX_AMOUNT" -> {
-                            postgresData.setTOTAL_TAX_AMOUNT(fieldValue);
-                            mongoData.setTOTAL_TAX_AMOUNT(fieldValue);
+                            postgresData.setTOTAL_TAX_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_TAX_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "PACKING_POSTING_AMOUNT" -> {
-                            postgresData.setPACKING_POSTING_AMOUNT(fieldValue);
-                            mongoData.setPACKING_POSTING_AMOUNT(fieldValue);
+                            postgresData.setPACKING_POSTING_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setPACKING_POSTING_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "PACKING_POSTING_TAX_AMOUNT" -> {
-                            postgresData.setPACKING_POSTING_TAX_AMOUNT(fieldValue);
-                            mongoData.setPACKING_POSTING_TAX_AMOUNT(fieldValue);
+                            postgresData.setPACKING_POSTING_TAX_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setPACKING_POSTING_TAX_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "TOTAL_INVOICE_AMOUNT" -> {
-                            postgresData.setTOTAL_INVOICE_AMOUNT(fieldValue);
-                            mongoData.setTOTAL_INVOICE_AMOUNT(fieldValue);
+                            postgresData.setTOTAL_INVOICE_AMOUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_INVOICE_AMOUNT(Double.valueOf(fieldValue));
                         }
                         case "TOTAL_DETAIL_LINE_COUNT" -> {
-                            postgresData.setTOTAL_DETAIL_LINE_COUNT(fieldValue);
-                            mongoData.setTOTAL_DETAIL_LINE_COUNT(fieldValue);
+                            postgresData.setTOTAL_DETAIL_LINE_COUNT(Double.valueOf(fieldValue));
+                            mongoData.setTOTAL_DETAIL_LINE_COUNT(Double.valueOf(fieldValue));
                         }
                         default -> {
                         }

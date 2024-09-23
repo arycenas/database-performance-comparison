@@ -86,4 +86,14 @@ public class DataController {
     public Map<String, Object> getAverageAggregation() {
         return dataAggregateService.aggregateAverageAndMeasureTime();
     }
+
+    @GetMapping("/min")
+    public Map<String, Object> getMinAggregation() {
+        return dataAggregateService.minAverageAndMeasureTime();
+    }
+
+    @GetMapping("/max")
+    public Map<String, Object> getMaxAggregation() {
+        return dataAggregateService.maxAverageAndMeasureTime();
+    }
 }
