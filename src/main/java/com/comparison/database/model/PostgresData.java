@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class PostgresData {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "COMPANY_CODE")
