@@ -80,18 +80,16 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
 
 2. Configure CSV files local directory, PostgreSQL & MongoDB in `application.properties`:
    ```properties
-   # Postgres
    spring.datasource.url=jdbc:postgresql://localhost:5432/your_database_name
    spring.datasource.username=your_postgresql_username
    spring.datasource.password=your_postgresql_password
    spring.jpa.hibernate.ddl-auto=update
-   # MongoDB
    spring.data.mongodb.uri=mongodb://localhost:27017/your_collection_name
    file.scan.directory=your_file_directory
    ```   
    
 3. Run the application:
-   ```
+   ```shell
    mvn spring-boot:run
    ```
    
@@ -99,3 +97,11 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
    - http://localhost:8080/data/import
    - http://localhost:8080/data/fetch
    - http://localhost:8080/data/sum
+
+### Future Improvements
+- Optimize indexing strategies for better query performance on both databases.
+- Implement parallel processing for bulk operations.
+- Extend benchmarks with larger datasets and complex queries.
+
+### Contributors
+🚀 Developed by ***Steven Arycena Fatich***
