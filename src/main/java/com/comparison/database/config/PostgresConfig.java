@@ -5,6 +5,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.comparison.database.repository")
-public class PostgresConfig {
-
-}
+public class PostgresConfig {}

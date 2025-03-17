@@ -15,44 +15,43 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PostgresData {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer id;
 
-    @Column(name = "COMPANY_CODE")
-    private String COMPANY_CODE;
+  @Column(name = "COMPANY_CODE")
+  private String companyCode;
 
-    @Column(name = "RECEIVE_NUMBER")
-    private Long RECEIVE_NUMBER;
+  @Column(name = "RECEIVE_NUMBER")
+  private Long receiveNumber;
 
-    @Column(name = "RECEIVE_DATE")
-    private String RECEIVE_DATE;
+  @Column(name = "RECEIVE_DATE")
+  private String receiveDate;
 
-    @Column(name = "ORDER_LAYOUT_TYPE")
-    private String ORDER_LAYOUT_TYPE;
+  @Column(name = "ORDER_LAYOUT_TYPE")
+  private String orderLayoutType;
 
-    @Column(name = "TOTAL_GROSS_AMOUNT")
-    private Double TOTAL_GROSS_AMOUNT;
+  @Column(name = "TOTAL_GROSS_AMOUNT")
+  private Double totalGrossAmount;
 
-    @Column(name = "TOTAL_DISCOUNT_AMOUNT")
-    private Double TOTAL_DISCOUNT_AMOUNT;
+  @Column(name = "TOTAL_DISCOUNT_AMOUNT")
+  private Double totalDiscountAmount;
 
-    @Column(name = "TOTAL_NET_AMOUNT")
-    private Double TOTAL_NET_AMOUNT;
+  @Column(name = "TOTAL_NET_AMOUNT")
+  private Double totalNetAmount;
 
-    @Column(name = "TOTAL_TAX_AMOUNT")
-    private Double TOTAL_TAX_AMOUNT;
+  @Column(name = "TOTAL_TAX_AMOUNT")
+  private Double totalTaxAmount;
 
-    @Column(name = "PACKING_POSTING_AMOUNT")
-    private Double PACKING_POSTING_AMOUNT;
+  @Column(name = "PACKING_POSTING_AMOUNT")
+  private Double packingPostingAmount;
 
-    @Column(name = "PACKING_POSTING_TAX_AMOUNT")
-    private Double PACKING_POSTING_TAX_AMOUNT;
+  @Column(name = "PACKING_POSTING_TAX_AMOUNT")
+  private Double packingPostingTaxAmount;
 
-    @Column(name = "TOTAL_INVOICE_AMOUNT")
-    private Double TOTAL_INVOICE_AMOUNT;
+  @Column(name = "TOTAL_INVOICE_AMOUNT")
+  private Double totalInvoiceAmount;
 
-    @Column(name = "TOTAL_DETAIL_LINE_COUNT")
-    private Double TOTAL_DETAIL_LINE_COUNT;
-
+  @Column(name = "TOTAL_DETAIL_LINE_COUNT")
+  private Double totalDetailLineCount;
 }
