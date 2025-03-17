@@ -98,10 +98,10 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
    - http://localhost:8080/data/fetch
    - http://localhost:8080/data/sum
 
-### Future Improvements
+## Future Improvements
 - Optimize indexing strategies for better query performance on both databases.
 - Implement parallel processing for bulk operations.
 - Extend benchmarks with larger datasets and complex queries.
 
-### Contributors
+## Contributors
 🚀 Developed by ***Steven Arycena Fatich***
