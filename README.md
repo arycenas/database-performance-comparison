@@ -45,16 +45,16 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
 
 ## API Endpoints
 
-| Method   | Endpoint                            | Description                              |
-|----------|-------------------------------------|------------------------------------------|
-| `POST`   | `/data/import`                      | Import CSV data into both databases      |
-| `GET`    | `/data/fetch`                       | Retrieve all records from both databases |
-| `PATCH`  | `/data/edit/{postgresId}/{mongoId}` | Update data in both databases            |
-| `DELETE` | `/data/edit/{postgresId}/{mongoId}` | Delete records from both databases       |
-| `GET`    | `/data/sum`                         | Get sum of `totalNetAmount`              |
-| `GET`    | `/data/average`                     | Get average of `totalNetAmount`          |
-| `GET`    | `/data/min`                         | Get minimum `totalNetAmount`             |
-| `GET`    | `/data/max`                         | Get maximum `totalNetAmount`             |
+| Method   | Endpoint                                  | Description                              |
+|----------|-------------------------------------------|------------------------------------------|
+| `POST`   | `api/v1/crud/import`                      | Import CSV data into both databases      |
+| `GET`    | `api/v1/crud/fetch`                       | Retrieve all records from both databases |
+| `DELETE` | `api/v1/crud/edit/{postgresId}/{mongoId}` | Delete records from both databases       |
+| `PATCH`  | `api/v1/crud/edit/{postgresId}/{mongoId}` | Update data in both databases            |
+| `GET`    | `api/v1/aggregation/sum`                  | Get sum of `totalNetAmount`              |
+| `GET`    | `api/v1/aggregation/average`              | Get average of `totalNetAmount`          |
+| `GET`    | `api/v1/aggregation/min`                  | Get minimum `totalNetAmount`             |
+| `GET`    | `api/v1/aggregation/max`                  | Get maximum `totalNetAmount`             |
 
 ## Performance Insights
 
@@ -87,21 +87,23 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
    spring.data.mongodb.uri=mongodb://localhost:27017/your_collection_name
    file.scan.directory=your_file_directory
    ```   
-   
+
 3. Run the application:
    ```shell
    mvn spring-boot:run
    ```
-   
+
 4. Access APIs at:
-   - http://localhost:8080/data/import
-   - http://localhost:8080/data/fetch
-   - http://localhost:8080/data/sum
+    - http://localhost:8080/data/import
+    - http://localhost:8080/data/fetch
+    - http://localhost:8080/data/sum
 
 ## Future Improvements
+
 - Optimize indexing strategies for better query performance on both databases.
 - Implement parallel processing for bulk operations.
 - Extend benchmarks with larger datasets and complex queries.
 
 ## Contributors
+
 🚀 Developed by ***Steven Arycena Fatich***

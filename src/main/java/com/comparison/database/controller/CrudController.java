@@ -1,6 +1,5 @@
 package com.comparison.database.controller;
 
-import com.comparison.database.service.AggregationDataService;
 import com.comparison.database.service.CrudDataService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -25,14 +24,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("/data")
-@Tag(
-    name = "Data Controller",
-    description = "Controller for all operations both CRUD and Aggregation")
-public class DataController {
+@RequestMapping("api/v1/crud")
+@Tag(name = "CRUD Controller", description = "Controller for all CRUD operations")
+public class CrudController {
 
   private final CrudDataService crudDataService;
-  private final AggregationDataService aggregationDataService;
 
   private static final String ERROR_MESSAGE = "Error";
 
@@ -104,58 +100,5 @@ public class DataController {
   public ResponseEntity<Map<String, Object>> deleteData(
       @PathVariable Long postgresId, @PathVariable String mongoId) {
     return ResponseEntity.ok(crudDataService.deleteDataFromDatabase(postgresId, mongoId));
-  }
-
-  @GetMapping("/sum")
-  @Operation(summary = "Sum Operation for Total Net Amount Column from Both PostgreSQL and MongoDB")
-  @ApiResponses(
-      value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Data operation success",
-            content = @Content(schema = @Schema(implementation = String.class))),
-      })
-  public ResponseEntity<Map<String, Object>> getSumAggregation() {
-    return ResponseEntity.ok(aggregationDataService.sumOperations());
-  }
-
-  @GetMapping("/average")
-  @Operation(
-      summary = "Average Operation for Total Net Amount Column from Both PostgreSQL and MongoDB")
-  @ApiResponses(
-      value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Data operation success",
-            content = @Content(schema = @Schema(implementation = String.class))),
-      })
-  public ResponseEntity<Map<String, Object>> getAverageAggregation() {
-    return ResponseEntity.ok(aggregationDataService.averageOperations());
-  }
-
-  @GetMapping("/min")
-  @Operation(summary = "Min Operation for Total Net Amount Column from Both PostgreSQL and MongoDB")
-  @ApiResponses(
-      value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Data operation success",
-            content = @Content(schema = @Schema(implementation = String.class))),
-      })
-  public ResponseEntity<Map<String, Object>> getMinAggregation() {
-    return ResponseEntity.ok(aggregationDataService.minOperations());
-  }
-
-  @GetMapping("/max")
-  @Operation(summary = "Max Operation for Total Net Amount Column from Both PostgreSQL and MongoDB")
-  @ApiResponses(
-      value = {
-        @ApiResponse(
-            responseCode = "200",
-            description = "Data operation success",
-            content = @Content(schema = @Schema(implementation = String.class))),
-      })
-  public ResponseEntity<Map<String, Object>> getMaxAggregation() {
-    return ResponseEntity.ok(aggregationDataService.maxOperations());
   }
 }
