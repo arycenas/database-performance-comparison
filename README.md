@@ -94,9 +94,9 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
    ```
 
 4. Access APIs at:
-    - http://localhost:8080/data/import
-    - http://localhost:8080/data/fetch
-    - http://localhost:8080/data/sum
+    - http://localhost:8080/api/v1/crud/import
+    - http://localhost:8080/api/v1/crud/fetch
+    - http://localhost:8080/api/v1/aggregation/sum
 
 ## Future Improvements
 
@@ -106,4 +106,4 @@ and NoSQL (MongoDB) databases handle large-scale data operations.
 
 ## Contributors
 
-🚀 Developed by ***Steven Arycena Fatich***
+Developed by ***Steven Arycena Fatich***
